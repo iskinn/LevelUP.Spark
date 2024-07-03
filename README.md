@@ -1,13 +1,3 @@
-
-```
-spark-submit --master spark://localhost:1560  \
-    --py-files /opt/kafka-spark/Streams/Utils/Connect_DB.py \
-    --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 \
-    --executor-cores 1 \
-    --conf spark.driver.extraJavaOptions="-Divy.cache.dir=/tmp -Divy.home=/tmp" 
-    /opt/kafka-spark/Streams/shkCreate/shkCreate.py
-```
-
 # Структура файлов и папок
 
 ## docker-compose
@@ -19,7 +9,7 @@ spark-submit --master spark://localhost:1560  \
 Корневая папка для заданий spark. Для каждого задания создается отдельная папка.
 В каждой папке есть файл с параметрами и python файл самого задания.
 
-
+```
 pip install clickhouse_driver clickhouse_cityhash lz4 pandas
 
 spark-submit --master spark://spark-master:7077  \
@@ -27,3 +17,4 @@ spark-submit --master spark://spark-master:7077  \
     --executor-cores 1 \
     --conf spark.driver.extraJavaOptions="-Divy.cache.dir=/tmp -Divy.home=/tmp" \
     /opt/spark/Streams/shkCreate_edu_100/shkCreate_sync_edu.py
+```
